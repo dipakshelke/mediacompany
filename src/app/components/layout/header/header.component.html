@@ -1,0 +1,27 @@
+<!--==========================
+  Header
+  ============================-->
+<header id="header" class="fixed-top">
+    <div class="container">
+
+        <div class="logo float-left">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+            <a href="#intro" class="scrollto">Media-Company Logo</a>
+        </div>
+
+        <nav class="main-nav float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a routerLink="/home">Home</a></li>
+                <li><a routerLink="/gallery">Gallery</a></li>
+                <li><a routerLink="/about">About Us</a></li>
+                <li *ngIf="!currentUser"><a routerLink="/login">Login</a></li>
+                <li *ngIf="currentUser">
+                    <h2>Welcome <strong>{{currentUser?.username}}</strong></h2>
+                </li>
+                <li *ngIf="currentUser"><a (click)="logout()">Logout</a></li>
+            </ul>
+        </nav><!-- .main-nav -->
+
+    </div>
+</header><!-- #header -->
